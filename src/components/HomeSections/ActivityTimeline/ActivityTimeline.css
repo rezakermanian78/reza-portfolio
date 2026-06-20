@@ -1,0 +1,119 @@
+.activity-timeline {
+  position: relative;
+}
+
+.activity-header {
+  max-width: 900px;
+  margin-bottom: 60px;
+}
+
+.timeline-list {
+  position: relative;
+  display: grid;
+  gap: 24px;
+}
+
+.timeline-list::before {
+  content: "";
+  position: absolute;
+  left: 88px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(0, 194, 255, 0.6),
+    rgba(139, 92, 246, 0.5),
+    transparent
+  );
+}
+
+.timeline-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 30px;
+  align-items: stretch;
+}
+
+.timeline-year {
+  position: relative;
+  color: var(--primary);
+  font-size: 1.35rem;
+  font-weight: 900;
+  padding-top: 30px;
+}
+
+.timeline-year::after {
+  content: "";
+  position: absolute;
+  top: 36px;
+  right: 28px;
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  box-shadow: 0 0 24px rgba(0, 194, 255, 0.7);
+}
+
+.timeline-content {
+  padding: 28px 30px;
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.075),
+      rgba(255, 255, 255, 0.035)
+    );
+  border: 1px solid var(--border-light);
+  transition: var(--transition);
+}
+
+.timeline-content:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0, 194, 255, 0.45);
+}
+
+.timeline-content span {
+  display: inline-block;
+  color: var(--gold);
+  font-size: 0.82rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.timeline-content h3 {
+  font-size: 1.22rem;
+  line-height: 1.45;
+  margin-bottom: 12px;
+}
+
+.timeline-content p {
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+@media (max-width: 720px) {
+  .timeline-list::before {
+    left: 0;
+  }
+
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding-left: 24px;
+  }
+
+  .timeline-year {
+    padding-top: 0;
+  }
+
+  .timeline-year::after {
+    left: -30px;
+    right: auto;
+    top: 6px;
+  }
+}

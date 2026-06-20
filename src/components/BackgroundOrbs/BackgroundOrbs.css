@@ -1,0 +1,52 @@
+.background-orbs {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(70px);
+  opacity: 0.34;
+  animation: orbFloat 12s ease-in-out infinite alternate;
+}
+
+.orb-one {
+  width: 360px;
+  height: 360px;
+  top: 12%;
+  left: -120px;
+  background: var(--secondary);
+}
+
+.orb-two {
+  width: 420px;
+  height: 420px;
+  right: -160px;
+  top: 38%;
+  background: var(--primary);
+  animation-delay: 2s;
+}
+
+.orb-three {
+  width: 300px;
+  height: 300px;
+  left: 35%;
+  bottom: -120px;
+  background: var(--gold);
+  opacity: 0.18;
+  animation-delay: 4s;
+}
+
+@keyframes orbFloat {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(40px, -45px, 0) scale(1.12);
+  }
+}
