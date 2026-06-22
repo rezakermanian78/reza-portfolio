@@ -29,8 +29,7 @@ export async function fetchPapers() {
     return await res.json();
   } catch (e) {
     console.warn("API unavailable, using local data:", e.message);
-    const { default: local } = await import("./research.js");
-    return local;
+    return [];
   }
 }
 
